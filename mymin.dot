@@ -1,0 +1,38 @@
+﻿
+digraph mytest{
+
+	fontname = "FangSong";
+	label = "学校职务层级管理";
+	fontcolor = "red"
+
+	node [shape = box, fontname = "FangSong",style = filled,fillcolor = "green",fontcolor = "black"];
+	edge [fontname = "FangSong",fontcolor = "blue"];
+
+	mastor1 [label = "校长"];
+	mastor2 [label ="书记"];
+	{rank = same; mastor2 ; mastor1;}
+	mastor1 -> mastor2 [label = "平级"];
+
+	middle1 [label = "教导主任"];
+	middle2 [label = "各个年级主任"];
+	middle3 [label = "各个学科带头人"];
+
+	low1 [label = "班主任"];
+	low2 [label = "学科教师"];
+	low3 [label = "助教"];
+
+	mastor1 ->middle1 [label = "管理"];
+	mastor2 -> middle1 [label = "管理"];
+	{rank = same; middle2;low1;}
+	middle2 -> low1 [label = "平级"];
+
+	middle1 ->middle2 [label = "可以管"];
+	middle1 -> low1 [label = "可以管"];
+
+	low1 -> middle3 [label = "可以管辖"];
+	low1 -> low2 [label ="可以要求"];
+	low1 -> low3 [label = "可以管"];
+	low2 -> low3 [label = "可以管"];
+
+
+}
