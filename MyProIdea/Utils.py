@@ -8,4 +8,6 @@ def sayhello():
 def showtime():
     print time.time()
 
-showtime();
+def add(a,b):
+    result = a+b;
+    print result
